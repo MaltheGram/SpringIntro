@@ -23,7 +23,7 @@ public class Controller{
 
     }
 
-    @GetMapping("/")
+    @GetMapping("/index")
     public String index(){
         return "Welcome to my Spring Application";
     }
