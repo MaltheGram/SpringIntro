@@ -36,7 +36,19 @@ public class Controller{
 
    @GetMapping("/erdetfredag")
     public String erDetFredag(){
-        String print = "";
+        String plainPrint = "It's not friday. It's " + LocalDate.now().getDayOfWeek();
+        String htmlPrint = "<!DOCTYPE html>\n" +
+                "<html lang=\"en\">\n" +
+                "<head>\n" +
+                "    <meta charset=\"UTF-8\">\n" +
+                "    <title>IT'S FRIDAY</title>\n" +
+                "</head>\n" +
+                "\n" +
+                "<body style=\"background-color: steelblue\">\n" +
+                "\n" +
+                "<h1 style=\"color: red\\\">IT'S FRIDAY</h1>" +
+                "</body>\n" +
+                "</html>";
 
         int q = LocalDate.now().getDayOfMonth();
         int m = LocalDate.now().getMonthValue();
@@ -47,26 +59,8 @@ public class Controller{
 
         int d = ((h + 5)%7) +1;
 
-        if (d == 5){
 
-            print = "<!DOCTYPE html>\n" +
-                    "<html lang=\"en\">\n" +
-                    "<head>\n" +
-                    "    <meta charset=\"UTF-8\">\n" +
-                    "    <title>IT'S FRIDAY</title>\n" +
-                    "</head>\n" +
-                    "\n" +
-                    "<body style=\"background-color: steelblue\">\n" +
-                    "\n" +
-                    "<h1 style=\"color: red\\\">IT'S FRIDAY</h1>" +
-                    "</body>\n" +
-                    "</html>";
-
-
-
-        }
-        else
-            print = "It's not friday...\nIt's " + LocalDate.now().getDayOfWeek();
+        String print = d == 5 ? htmlPrint : plainPrint;
 
         return print;
    }
