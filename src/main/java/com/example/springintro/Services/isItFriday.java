@@ -1,5 +1,6 @@
 package com.example.springintro.Services;
 
+import java.io.Serializable;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 
@@ -10,7 +11,7 @@ public class isItFriday {
 
     public static String fridayCalculator() {
         DayOfWeek currentDay = LocalDate.now().getDayOfWeek();
-        String plainPrint = "It's not friday. It's " + currentDay;
+        String plainPrint = "It's not friday. It's "  + dayCalculator(currentDay);
 
         String htmlPrint = "<!DOCTYPE html>\n" +
                 "<html lang=\"en\">\n" +
@@ -39,6 +40,36 @@ public class isItFriday {
         String print = d == 5 ? htmlPrint : plainPrint;
 
         return print;
+
+    }
+
+    public static Serializable dayCalculator(DayOfWeek day){
+
+        switch (day){
+            case MONDAY:
+                return "monday";
+
+            case TUESDAY:
+                return "tuesday";
+
+            case WEDNESDAY:
+                return "wednesday";
+
+            case THURSDAY:
+                return "thursday";
+
+            case FRIDAY:
+                return "friday";
+
+            case SATURDAY:
+                return "saturday";
+
+            case SUNDAY:
+                return "sunday";
+
+        }
+
+        return day;
 
     }
 }

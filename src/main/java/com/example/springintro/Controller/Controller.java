@@ -37,7 +37,7 @@ public class Controller{
    @GetMapping("/erdetfredag")
     public String erDetFredag(){
 
-        return "Is it friday? " + isItFriday.fridayCalculator();
+        return "Is it friday?\n " + isItFriday.fridayCalculator();
 
    }
 
