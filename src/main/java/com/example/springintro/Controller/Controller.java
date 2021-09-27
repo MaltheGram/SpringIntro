@@ -1,13 +1,9 @@
 package com.example.springintro.Controller;
 
-import com.example.springintro.Services.isItFriday;
+import com.example.springintro.Services.IsItFriday;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.swing.text.html.HTMLDocument;
-import java.time.LocalDate;
-
 
 
 @RestController
@@ -30,14 +26,13 @@ public class Controller{
     @GetMapping("parameter")
     public String parameter(@RequestParam String param){
 
-
         return param + " " + ":)";
     }
 
    @GetMapping("/erdetfredag")
     public String erDetFredag(){
 
-        return "Is it friday?\n " + isItFriday.fridayCalculator();
+        return "Is it friday?\n " + IsItFriday.fridayCalculator();
 
    }
 

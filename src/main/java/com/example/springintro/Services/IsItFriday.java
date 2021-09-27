@@ -4,10 +4,8 @@ import java.io.Serializable;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 
-public class isItFriday {
+public class IsItFriday {
 
-    public isItFriday() {
-    }
 
     public static String fridayCalculator() {
         DayOfWeek currentDay = LocalDate.now().getDayOfWeek();
@@ -42,7 +40,7 @@ public class isItFriday {
         return print;
 
     }
-
+ 
     public static Serializable dayCalculator(DayOfWeek day){
 
         switch (day){
